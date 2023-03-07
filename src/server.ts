@@ -22,7 +22,7 @@ const start = async () => {
 
   // Add your own express routes here
 
-  app.listen(8008);
+  app.listen(3000);
 };
 
 start();

@@ -22,7 +22,11 @@ const Customers: CollectionConfig = {
               // Note: Clerk stores the clientToken in a cookie
               // named "__session" for Firebase compatibility
               const sessionId = req.query._clerk_session_id;
-              if (!sessionId) return done(null, false);
+              console.log("get session id from req", sessionId);
+              if (!sessionId || sessionId === "undefined") {
+                console.log("no session id");
+                return done(null, null);
+              }
 
               // Note: Clerk stores the clientToken in a cookie
               // named "__session" for Firebase compatibility
