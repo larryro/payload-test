@@ -6,7 +6,7 @@ import Articles from "./collections/Articles";
 import Customers from "./collections/Customers";
 
 export default buildConfig({
-  serverURL: "http://localhost:3001",
+  // serverURL: "http://localhost:3001",
   admin: {
     user: Users.slug,
   },
