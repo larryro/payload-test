@@ -25,7 +25,12 @@ const Customers: CollectionConfig = {
               console.log("get session id from req", sessionId);
               const cookies = new Cookies(req, payload.res);
               const sessionToken = cookies.get("__session");
-              if (!sessionId || sessionId == "null" || !sessionToken) {
+              if (
+                !sessionId ||
+                sessionId == "undefined" ||
+                sessionId == "null" ||
+                !sessionToken
+              ) {
                 console.log("no session id");
                 return done(null, null);
               }
