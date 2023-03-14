@@ -17,12 +17,12 @@ import jwt from "jsonwebtoken";
 export const clerkStrategy=function(payload){
     return new CustomStrategy(async (req, done) => {
         try {
-          const splitPem =
-            process.env.CLERK_JWT_VERIFICATION_KEY.match(/.{1,64}/g);
-          const publicKey =
-            "-----BEGIN PUBLIC KEY-----\n" +
-            splitPem.join("\n") +
-            "\n-----END PUBLIC KEY-----";
+          // const splitPem =
+          //   process.env.CLERK_JWT_VERIFICATION_KEY.match(/.{1,64}/g);
+          // const publicKey =
+          //   "-----BEGIN PUBLIC KEY-----\n" +
+          //   splitPem.join("\n") +
+          //   "\n-----END PUBLIC KEY-----";
           // console.log("express base url", payload.express.request.ip);
           // console.log("req", req);
           // Note: Clerk stores the clientToken in a cookie
