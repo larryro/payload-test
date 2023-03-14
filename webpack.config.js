@@ -1,8 +1,12 @@
 module.exports = {
-  fallback: {
-    util: require.resolve("util"),
+  resolve: {
+    fallback: {
+      util: require.resolve("util"),
+      stream: require.resolve("stream-browserify"),
+    },
   },
   browser: {
     fs: false,
+    // stream: false,
   },
 };

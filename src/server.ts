@@ -3,12 +3,15 @@ import payload from "payload";
 
 require("dotenv").config();
 const app = express();
-
+const pkg = require("@clerk/clerk-sdk-node");
+const { clients, sessions, users, verifyToken,ClerkExpressWithAuth } = pkg;
 // Redirect root to Admin panel
 app.get("/", (_, res) => {
   res.redirect("/admin");
 });
-
+app.use(ClerkExpressWithAuth({
+  // ...options
+}))
 const start = async () => {
   // Initialize Payload
   await payload.init({
@@ -21,7 +24,7 @@ const start = async () => {
   });
 
   // Add your own express routes here
-
+  console.log("port", process.env.PORT);
   app.listen(process.env.PORT || 3000);
 };
 
